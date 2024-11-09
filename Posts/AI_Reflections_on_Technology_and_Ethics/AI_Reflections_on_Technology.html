@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://codepen.io/z-/pen/ea66dd74a7a114c473eee15da9e6a9d2.scss>">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>AI: Reflections on Technology and Ethics</title>
+</head>
+<body>
+    <div id="container" class="container">
+        <div class="header card">
+            <div class="page-width">
+                <div class="logotext"><i class="fad fa-rocket"></i> Ravi Kant Insights</div>
+                <a class="mytwitter fab fa-linkedin" href="https://www.linkedin.com/in/ravikant7257/" target="_blank" rel="no-refer"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="page card-b page-width">
+                <div id="post1"></div>
+                <h1>"AI: Reflections on Technology and Ethics"<a href="#post1" class="fas fa-hashtag"></a></h1>
+               
+<p>AI has become an incredibly popular topic in today's world. Its growth and impact have been so remarkable that it has created numerous job opportunities across various industries. The quick arrival of new technologies often amazes us and makes us think about their impact.</p>
+<p>I still remember the first time I had the chance to use a computer. I was in standard 2 at school, and it opened up a world of endless possibilities. The mere thought of understanding everything that was happening inside that machine sparked a deep curiosity within me.</p>
+<p>A year later, luckily my father bought a <a href="https://en.wikipedia.org/wiki/PlayStation_Portable">PlayStation Portable</a>. This portable gaming console became a gateway to a world of video games, and I have been fascinated by them for a long time and I still am. Playing video games has brought me a lot of joy and excitement, and it has greatly influenced my interests and hobbies up until now.</p>
+<p>Recently, I played a game all about the year 2038, portraying a future where robots have taken over most of the work, from assisting in homes to working in police investigations. However, this advancement in robotics created a divide among the jobless population, leading to feelings of hatred, depression, and substance abuse.</p>
+<p>In this game, the robots, particularly the Detroit model, had become highly intelligent. Sadly, because they were treated badly and abused by their owners, they began to fight back by causing harm to their owners and sometimes even causing their deaths. While we might perceive this as an act of intelligence, it was seen as a virus in that situation. The robots demanded recognition and rights, spreading this notion to other robots manufactured by the company '<a href="https://www.quanticdream.com/en/detroit-become-human">Android- Detroit</a>'.</p>
+<p>Artificial intelligence undoubtedly has the potential to make human work easier and faster, but it is crucial that we use it wisely. It's important to consider the consequences and ethical implications of our actions. In the game I played, the robots were operated with a specialized fluid known as "blue blood," which cost significantly less than the expenses incurred by companies like <a href="https://openai.com/">ChatGPT</a>, which has to pay millions of Indian Rupees daily for its maintenance.</p>
+<p>This example serves as a reminder that while AI can bring about remarkable advancements, we should exercise caution and responsibility in its implementation. By doing this, we can make sure that we use artificial intelligence in a way that is helpful and safe, while also reducing any possible problems or unexpected results.</p>
+            </div>
+           
+        <div class="darkmode card-b fas fa-moon"></div>
+    </div>
+    <div class="clip"></div>
+    <script>
+//Only IE & Edge don't support clip-path - but the switching still works, they just don't see an animation.
+let buttonenabled = true,
+scroll = 0;
+$(document).on("click", ".darkmode", function () {
+if (!buttonenabled) return;
+buttonenabled = false;
+$(".clip").html($("body >.container")[0].outerHTML); //Copy container to inside clip
+scrollbind($(".clip .container"));
+$(".clip .container").toggleClass("dark").scrollTop(scroll); //Toggle dark mode and set scroll
+$(".clip .darkmode").toggleClass("fa-moon").toggleClass("fa-sun"); //Make changes: change button icon
+$(".clip").addClass("anim"); //Animate the clip
+setTimeout(function () {
+    $("body >.container").replaceWith($(".clip").html()); //Replace container with clip html
+    scrollbind($("body >.container")); //bind scroll with new container
+    $("body >.container").scrollTop(scroll); //Set scroll position
+    $(".clip").html("").removeClass("anim"); //Hide clip
+    buttonenabled = true;
+}, 1000); //Slightly before animation finishes but when the circle will have covered the screen, gives us 500ms to make the changes we need which is plenty. Slower computers will not see a flash, but elements may not have loaded - if it really is an issue delay line 19 a little
+});
+
+const scrollbind = (el) =>
+el.bind("scroll", function () {
+    scroll = $(this).scrollTop();
+    if ($(".container").length > 1)
+        //No point setting it if there is only 1
+        $(".container").scrollTop(scroll);
+    //This will set the scroll position of the container inside the clip so it scrolls while the animation is being carried out
+});
+scrollbind($(".container"));
+
+    </script>
+</body>
+</html>
