@@ -1,0 +1,2 @@
+# ravikantinsights.com
+ravikantinsights
